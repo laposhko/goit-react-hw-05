@@ -14,7 +14,6 @@ export default function App() {
     const fetchData = async () => {
       try {
         const response = await getData();
-        console.log(response);
         setMovies(response.data.results);
       } catch (err) {
         console.log(err);
@@ -22,7 +21,6 @@ export default function App() {
     };
     fetchData();
   }, []);
-  console.log(movies);
   return (
     <div className={css.app}>
       <Navigation></Navigation>

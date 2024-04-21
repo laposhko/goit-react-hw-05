@@ -15,9 +15,6 @@ export default async function getData() {
 }
 
 export async function getDataById(id) {
-  id = id.substring(1);
-
   const url = `${BASE_URL}3/movie/${id}?language=en-US`;
-  console.log(url);
   return await axios.get(url, options);
 }
