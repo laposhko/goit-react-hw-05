@@ -10,7 +10,7 @@ export default function MovieDetailsPage() {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const response = await getDataById(movieId.slice(1));
+        const response = await getDataById(movieId);
         setMovie(response.data);
       } catch (err) {
         console.log(err);
