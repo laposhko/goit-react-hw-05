@@ -1,4 +1,4 @@
-import MoviesList from "../../components/MovieList/MovieList";
+import MoviesList from "../../components/MoviesList/MoviesList";
 export default function HomePage({ movies }) {
   return (
     <>

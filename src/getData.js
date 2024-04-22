@@ -8,7 +8,7 @@ const options = {
     Authorization: `Bearer ${TOKEN}`,
   },
 };
-export default async function getData() {
+export async function getData() {
   const url = `${BASE_URL}3/trending/movie/day?language=en-US`;
 
   return await axios.get(url, options);
@@ -16,5 +16,10 @@ export default async function getData() {
 
 export async function getDataById(id) {
   const url = `${BASE_URL}3/movie/${id}?language=en-US`;
+  return await axios.get(url, options);
+}
+
+export async function getDataByQuery(query) {
+  const url = `${BASE_URL}3/search/movie?query=${query}&language=en-US`;
   return await axios.get(url, options);
 }
