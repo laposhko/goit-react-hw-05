@@ -1,13 +1,22 @@
 .list {
   display: flex;
-  flex-direction: column;
-  gap: 7px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .list a {
-  color: #6a381f;
+  color: #774e24;
 }
 .list a:hover,
 .list a:focus {
   color: #6e0d25;
+}
+
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 9px;
+  background-color: #dcab6b;
+  padding: 15px;
+  border-radius: 5px;
 }
