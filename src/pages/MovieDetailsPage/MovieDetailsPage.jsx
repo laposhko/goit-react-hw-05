@@ -8,7 +8,7 @@ import { TbArrowBackUp } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
 import css from "./MovieDetailsPage.module.css";
 export default function MovieDetailsPage() {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
@@ -28,20 +28,6 @@ export default function MovieDetailsPage() {
     };
     fetch();
   }, [movieId]);
-  let title, genres, overview, score, path, year;
-  const defaultImg =
-    "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
-  if (movie !== undefined) {
-    const ind = movie.release_date.indexOf("-");
-    title = movie.title;
-    year = movie.release_date.slice(0, ind);
-    path = movie.backdrop_path
-      ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
-      : defaultImg;
-    score = movie.vote_average;
-    overview = movie.overview;
-    genres = movie.genres.map((genre) => genre.name).join(", ");
-  }
 
   return (
     <div className={css.content}>
@@ -64,20 +50,29 @@ export default function MovieDetailsPage() {
         />
       )}
       {error && <p>Opps.. Please reload the page</p>}
-      {!loader && !error && (
+      {!loader && !error && movie !== null && (
         <div>
           <div>
-            <img src={path} alt={overview} height="300px" />
+            <img
+              src={
+                movie.backdrop_path
+                  ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
+                  : "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg"
+              }
+              alt={movie.overview}
+              height="300px"
+            />
           </div>
           <div>
             <h2>
-              {title} ({year})
+              {movie.title} (
+              {movie.release_date.slice(0, movie.release_date.indexOf("-"))})
             </h2>
-            <p>User Score: {Math.round(score * 10)}%</p>
+            <p>User Score: {Math.round(movie.vote_average * 10)}%</p>
             <h3>Overview</h3>
-            <p>{overview}</p>
+            <p>{movie.overview}</p>
             <h3>Genres</h3>
-            <p>{genres}</p>
+            <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
           </div>
           <hr />
           <h3>Additional information</h3>
