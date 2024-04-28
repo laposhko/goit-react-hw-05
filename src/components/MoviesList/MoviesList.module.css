@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.list a {
+  color: #6a381f;
+}
+.list a:hover,
+.list a:focus {
+  color: #6e0d25;
+}

@@ -1,0 +1,22 @@
+.form {
+  padding: 20px;
+  display: flex;
+}
+.input {
+  margin-right: 20px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  background-color: #dcab6b;
+}
+.input:hover,
+.input:focus {
+  background-color: #774e24;
+}
+/* .btn {
+  background-color: #dcab6b;
+  color: #6e0d25;
+}
+.btn:hover {
+  background-color: #774e24;
+} */

@@ -1,7 +1,21 @@
 .navigation {
   display: flex;
   gap: 40px;
-  border: 2px grey solid;
   padding: 20px 40px;
   width: 100%;
+  margin-left: -20px;
+  background: linear-gradient(to right, #6a381f, #774e24, #dcab6b);
+}
+
+.navigation a {
+  color: #ffffb3;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.navigation a:hover {
+  color: #6e0d25;
+}
+
+.active {
+  background-color: #6e0d25;
 }

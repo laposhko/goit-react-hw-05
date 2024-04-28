@@ -23,3 +23,13 @@ export async function getDataByQuery(query) {
   const url = `${BASE_URL}3/search/movie?query=${query}&language=en-US`;
   return await axios.get(url, options);
 }
+
+export async function getReviews(id) {
+  const url = `${BASE_URL}3/movie/${id}/reviews?language=en-US`;
+  return axios.get(url, options);
+}
+
+export async function getCast(id) {
+  const url = `${BASE_URL}3/movie/${id}/credits?language=en-US`;
+  return axios.get(url, options);
+}

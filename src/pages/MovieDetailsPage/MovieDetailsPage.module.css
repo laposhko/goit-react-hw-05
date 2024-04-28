@@ -1,11 +1,45 @@
 .content {
   padding: 20px;
 }
+.backLink {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  background-color: #dcab6b;
+  color: #6e0d25;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-bottom: 15px;
+}
+.backLink:hover {
+  background-color: #774e24;
+  color: #6e0d25;
+}
 .info {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 40px;
+}
+.info li a {
+  color: #6e0d25;
+  padding: 8px;
+  border-radius: 4px;
 }
 .info li a:hover {
-  color: brown;
+  background-color: #774e24;
+  color: #dcab6b;
 }
+.active {
+  background-color: #774e24;
+  color: #dcab6b;
+}
+/* button {
+
+}
+button:hover {
+} */

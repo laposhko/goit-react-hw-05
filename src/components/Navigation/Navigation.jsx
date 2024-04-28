@@ -3,8 +3,22 @@ import css from "./Navigation.module.css";
 export default function Navigation() {
   return (
     <nav className={css.navigation}>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/movies">Movies</NavLink>
+      <NavLink
+        className={({ isActive }) => {
+          return isActive && css.active;
+        }}
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => {
+          return isActive && css.active;
+        }}
+        to="/movies"
+      >
+        Movies
+      </NavLink>
     </nav>
   );
 }
